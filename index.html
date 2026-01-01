@@ -2,88 +2,339 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mendez Insurance Solutions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-    }
+  <meta name="description" content="Mendez Insurance Solutions — personal and business coverage with fast quotes and friendly service." />
 
-    header {
-      background: #111827;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-      color: #38bdf8;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    input, textarea, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      border-radius: 6px;
-      border: none;
-    }
-
-    button {
-      background: #38bdf8;
-      color: black;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-      color: gray;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 
 <body>
+  <!-- Netlify hidden form (helps detection) -->
+  <form name="client-form" netlify hidden>
+    <input type="text" name="fullName" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <select name="insuranceType"></select>
+    <select name="preferredContact"></select>
+    <textarea name="notes"></textarea>
+  </form>
 
-<header>
-  <h1>Mendez Insurance Solutions</h1>
-  <p>Helping you protect what matters most</p>
-</header>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Mendez Insurance Solutions">
+        <div class="brand-mark">MIS</div>
+        <div class="brand-text">
+          <div class="brand-name">Mendez Insurance Solutions</div>
+          <div class="brand-sub">Fast quotes • Clear coverage • Real support</div>
+        </div>
+      </a>
 
-<section>
-  <div class="card">
-    <h2>Client Information Form</h2>
-    <form>
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <input type="tel" placeholder="Phone Number" />
-      <input type="text" placeholder="Type of Insurance Needed" />
-      <textarea rows="4" placeholder="Additional Notes"></textarea>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-</section>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#process">How it works</a>
+        <a href="#intake">Client form</a>
+      </nav>
 
-<footer>
-  © 2026 Mendez Insurance Solutions
-</footer>
+      <a class="btn btn-primary" href="#intake">Get a Quote</a>
 
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <div class="pill">
+            <span class="dot"></span>
+            Licensed • Trusted • Client-first
+          </div>
+
+          <h1>
+            Insurance made simple.
+            <span class="grad">Protection that fits your life.</span>
+          </h1>
+
+          <p class="lead">
+            We help you find the right coverage without the stress.
+            Submit your info and we’ll follow up with the best options for you.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#intake">Start the Client Form</a>
+            <a class="btn btn-ghost" href="#services">See Coverage Options</a>
+          </div>
+
+          <div class="trust">
+            <div class="trust-card">
+              <div class="trust-top">Quick Response</div>
+              <div class="trust-bottom">Same-day follow up</div>
+            </div>
+            <div class="trust-card">
+              <div class="trust-top">Clear Guidance</div>
+              <div class="trust-bottom">No confusing jargon</div>
+            </div>
+            <div class="trust-card">
+              <div class="trust-top">Personal Support</div>
+              <div class="trust-bottom">We stay with you</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="glass-card">
+            <div class="glass-title">Get a fast quote</div>
+            <div class="glass-sub">Fill this out in under 2 minutes.</div>
+
+            <div class="mini-grid">
+              <div class="mini">
+                <div class="mini-label">Auto</div>
+                <div class="mini-value">Coverage options</div>
+              </div>
+              <div class="mini">
+                <div class="mini-label">Home</div>
+                <div class="mini-value">Protect your space</div>
+              </div>
+              <div class="mini">
+                <div class="mini-label">Life</div>
+                <div class="mini-value">Plan ahead</div>
+              </div>
+              <div class="mini">
+                <div class="mini-label">Business</div>
+                <div class="mini-value">Stay protected</div>
+              </div>
+            </div>
+
+            <a class="btn btn-primary btn-full" href="#intake">Open Client Form</a>
+
+            <div class="note">
+              Tip: Add details in “Notes” so we can quote you faster.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-bg" aria-hidden="true"></div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Coverage options</h2>
+          <p>Pick what you need. We’ll help you compare and choose confidently.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">🚗</div>
+            <h3>Auto Insurance</h3>
+            <p>Reliable coverage for your car with options that match your budget.</p>
+            <ul>
+              <li>Liability & full coverage</li>
+              <li>Multi-vehicle discounts</li>
+              <li>SR-22 support (if needed)</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏠</div>
+            <h3>Home & Renters</h3>
+            <p>Protect your home, apartment, and valuables with the right plan.</p>
+            <ul>
+              <li>Homeowners coverage</li>
+              <li>Renters insurance</li>
+              <li>Personal property protection</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧡</div>
+            <h3>Life Insurance</h3>
+            <p>Help your family stay secure with coverage built for your goals.</p>
+            <ul>
+              <li>Term & whole life options</li>
+              <li>Flexible coverage amounts</li>
+              <li>Easy guidance</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏢</div>
+            <h3>Business</h3>
+            <p>Coverage that helps your business stay protected and running smoothly.</p>
+            <ul>
+              <li>General liability</li>
+              <li>Commercial auto</li>
+              <li>Custom business solutions</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>How it works</h2>
+          <p>Simple steps. No stress. Fast follow up.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h3>Submit the client form</h3>
+              <p>Tell us what coverage you want and any details that matter.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h3>We compare options</h3>
+              <p>We look for the best fit based on coverage and budget.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h3>We contact you</h3>
+              <p>We follow up by phone or email with your quote options.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTAKE FORM -->
+    <section id="intake" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Client information form</h2>
+          <p>Fill this out and we’ll reach out with next steps.</p>
+        </div>
+
+        <div id="success" class="success hidden" role="status" aria-live="polite">
+          ✅ Thank you! Your form was submitted. We’ll contact you soon.
+        </div>
+
+        <div class="form-wrap">
+          <form
+            class="form"
+            name="client-form"
+            method="POST"
+            data-netlify="true"
+            action="/?success=1#intake"
+          >
+            <input type="hidden" name="form-name" value="client-form" />
+
+            <div class="grid-2">
+              <label class="field">
+                <span>Full name</span>
+                <input name="fullName" type="text" placeholder="John Doe" required />
+              </label>
+
+              <label class="field">
+                <span>Email</span>
+                <input name="email" type="email" placeholder="john@email.com" required />
+              </label>
+
+              <label class="field">
+                <span>Phone number</span>
+                <input name="phone" type="tel" placeholder="(915) 000-0000" />
+              </label>
+
+              <label class="field">
+                <span>Insurance type</span>
+                <select name="insuranceType" required>
+                  <option value="" disabled selected>Select one</option>
+                  <option>Auto</option>
+                  <option>Home</option>
+                  <option>Renters</option>
+                  <option>Life</option>
+                  <option>Business</option>
+                  <option>Other</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Preferred contact</span>
+                <select name="preferredContact">
+                  <option>Phone</option>
+                  <option>Email</option>
+                  <option>Text</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Best time to reach you</span>
+                <input name="bestTime" type="text" placeholder="Morning / Afternoon / Evening" />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Notes (help us quote faster)</span>
+              <textarea name="notes" rows="5" placeholder="Example: year/make/model, zip code, home type, business type, etc."></textarea>
+            </label>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Submit</button>
+              <p class="form-hint">
+                By submitting, you agree we can contact you about your request.
+              </p>
+            </div>
+          </form>
+
+          <aside class="side">
+            <div class="side-card">
+              <h3>What to include</h3>
+              <ul>
+                <li>Zip code (for accurate pricing)</li>
+                <li>Auto: year/make/model</li>
+                <li>Home: renters or owners</li>
+                <li>Life: general coverage goal</li>
+              </ul>
+            </div>
+
+            <div class="side-card">
+              <h3>Need something specific?</h3>
+              <p>
+                Add it in the notes and we’ll make sure it’s included in your quote options.
+              </p>
+              <a class="btn btn-ghost btn-full" href="#top">Back to top</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brand-mark small">MIS</div>
+        <div>
+          <div class="footer-title">Mendez Insurance Solutions</div>
+          <div class="footer-sub">Helping you protect what matters most.</div>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#process">How it works</a>
+        <a href="#intake">Client form</a>
+      </div>
+
+      <div class="footer-copy">© <span id="year"></span> Mendez Insurance Solutions</div>
+    </div>
+  </footer>
 </body>
 </html>
