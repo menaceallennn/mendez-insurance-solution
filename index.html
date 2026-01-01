@@ -2,46 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mendez Insurance Solutions | Life Insurance</title>
-  <meta name="description" content="Mendez Insurance Solutions — Life insurance made simple. Start a new form to request a quote." />
-
+  <meta name="description" content="Mendez Insurance Solutions — Life Insurance. Start a new form to request information." />
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 
 <body>
-  <!-- Helps Netlify detect the form -->
-  <form name="life-insurance-form" netlify hidden>
+  <!-- Netlify detection helper (hidden) -->
+  <form name="life-client-form" netlify hidden>
     <input type="text" name="fullName" />
     <input type="email" name="email" />
     <input type="tel" name="phone" />
-    <select name="preferredContact"></select>
-    <input type="text" name="coverageGoal" />
-    <input type="text" name="tobaccoUse" />
     <textarea name="notes"></textarea>
   </form>
 
-  <header class="header">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Mendez Insurance Solutions Home">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top" aria-label="Mendez Insurance Solutions">
         <div class="brand-mark">MIS</div>
         <div class="brand-text">
           <div class="brand-name">Mendez Insurance Solutions</div>
-          <div class="brand-sub">Life Insurance • Simple • Fast • Clear</div>
+          <div class="brand-sub">Life Insurance</div>
         </div>
       </a>
 
       <nav class="nav">
-        <a href="#why">Why life insurance</a>
-        <a href="#form">Client form</a>
+        <a href="#form">Client Form</a>
+        <a href="#why">Why Life Insurance</a>
       </nav>
 
-      <button class="btn btn-primary" id="startFormTop" type="button">
+      <button class="btn btn-primary" id="startNewFormTop" type="button">
         Start New Form
       </button>
 
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -53,110 +49,71 @@
       <div class="hero-bg" aria-hidden="true"></div>
 
       <div class="container hero-grid">
-        <div class="hero-left">
+        <div class="hero-copy">
           <div class="pill">
             <span class="dot"></span>
-            Personalized life insurance help
+            Simple • Professional • Fast follow up
           </div>
 
           <h1>
-            Life insurance,
-            <span class="grad">made easy.</span>
+            Life Insurance that feels
+            <span class="grad">easy and clear.</span>
           </h1>
 
           <p class="lead">
-            Protect your family and your future. Fill out a quick form and we’ll reach out with options
-            that match your budget and goals.
+            Fill out a quick form and we’ll contact you with next steps and options.
+            No pressure. Just help.
           </p>
 
           <div class="hero-actions">
-            <button class="btn btn-primary" id="startFormHero" type="button">Start New Form</button>
-            <a class="btn btn-ghost" href="#why">Learn more</a>
+            <button class="btn btn-primary" id="startNewFormHero" type="button">Start New Form</button>
+            <a class="btn btn-ghost" href="#form">Go to Form</a>
           </div>
 
-          <div class="trust">
-            <div class="trust-card">
-              <div class="trust-top">Fast follow up</div>
-              <div class="trust-bottom">Same-day or next-day</div>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-top">Fast replies</div>
+              <div class="stat-sub">Same day or next day</div>
             </div>
-            <div class="trust-card">
-              <div class="trust-top">No pressure</div>
-              <div class="trust-bottom">Clear and honest options</div>
+            <div class="stat">
+              <div class="stat-top">Clear guidance</div>
+              <div class="stat-sub">No confusing talk</div>
             </div>
-            <div class="trust-card">
-              <div class="trust-top">Simple process</div>
-              <div class="trust-bottom">Quick form, quick quotes</div>
+            <div class="stat">
+              <div class="stat-top">Life only</div>
+              <div class="stat-sub">Specialized support</div>
             </div>
           </div>
         </div>
 
-        <div class="hero-right">
-          <div class="glass-card">
-            <div class="glass-title">What you’ll get</div>
-            <div class="glass-sub">A quick review and the next best steps.</div>
+        <div class="hero-card">
+          <div class="card">
+            <div class="card-title">Start the client form</div>
+            <div class="card-sub">Takes about 1–2 minutes.</div>
 
-            <div class="mini-grid">
-              <div class="mini">
-                <div class="mini-label">Term vs Whole</div>
-                <div class="mini-value">Pick what fits you</div>
+            <div class="card-list">
+              <div class="card-item">
+                <div class="ci-title">✅ Simple questions</div>
+                <div class="ci-sub">Name, contact, and notes</div>
               </div>
-              <div class="mini">
-                <div class="mini-label">Coverage goal</div>
-                <div class="mini-value">Match your needs</div>
+              <div class="card-item">
+                <div class="ci-title">✅ Faster help</div>
+                <div class="ci-sub">We know what you need</div>
               </div>
-              <div class="mini">
-                <div class="mini-label">Budget</div>
-                <div class="mini-value">Keep it affordable</div>
-              </div>
-              <div class="mini">
-                <div class="mini-label">Guidance</div>
-                <div class="mini-value">No confusion</div>
+              <div class="card-item">
+                <div class="ci-title">✅ Clean process</div>
+                <div class="ci-sub">We follow up and guide you</div>
               </div>
             </div>
 
-            <button class="btn btn-primary btn-full" id="startFormCard" type="button">
+            <button class="btn btn-primary btn-full" id="startNewFormCard" type="button">
               Start New Form
             </button>
 
-            <div class="note">
-              Tip: Add your coverage goal (example: “$250,000”) so we can quote faster.
+            <div class="fineprint">
+              Tip: Put your budget or coverage goal in “Notes” if you have one.
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY -->
-    <section id="why" class="section section-alt">
-      <div class="container">
-        <div class="section-head">
-          <h2>Why life insurance</h2>
-          <p>It’s one of the simplest ways to protect the people you love.</p>
-        </div>
-
-        <div class="cards">
-          <article class="card">
-            <div class="card-icon">🛡️</div>
-            <h3>Protect your family</h3>
-            <p>Help cover bills and essentials if something unexpected happens.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🏡</div>
-            <h3>Keep your home</h3>
-            <p>Support mortgage or rent so your family can stay stable.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🎓</div>
-            <h3>Support future goals</h3>
-            <p>Help with education costs and long-term plans.</p>
-          </article>
-        </div>
-
-        <div class="cta-row">
-          <button class="btn btn-primary" id="startFormWhy" type="button">Start New Form</button>
-          <a class="btn btn-ghost" href="#form">Go to form</a>
         </div>
       </div>
     </section>
@@ -166,98 +123,79 @@
       <div class="container">
         <div class="section-head">
           <h2>Life Insurance Client Form</h2>
-          <p>Fill this out and we’ll contact you with next steps.</p>
+          <p>Fill this out and we’ll contact you.</p>
         </div>
 
         <div id="success" class="success hidden" role="status" aria-live="polite">
           ✅ Thank you! Your form was submitted. We’ll contact you soon.
         </div>
 
-        <div class="form-wrap">
+        <div class="form-layout">
           <form
             class="form"
             id="lifeForm"
-            name="life-insurance-form"
+            name="life-client-form"
             method="POST"
             data-netlify="true"
             action="/?success=1#form"
           >
-            <input type="hidden" name="form-name" value="life-insurance-form" />
+            <input type="hidden" name="form-name" value="life-client-form" />
+            <!-- life-only tag so you always know what it is -->
+            <input type="hidden" name="insuranceType" value="Life Insurance" />
 
-            <div class="grid-2">
+            <!-- This is YOUR original simple form, just styled bigger & cleaner -->
+            <label class="field">
+              <span>Full Name</span>
+              <input name="fullName" type="text" placeholder="Full name" required />
+            </label>
+
+            <div class="row">
               <label class="field">
-                <span>Full name</span>
-                <input name="fullName" type="text" placeholder="John Doe" required />
+                <span>Email Address</span>
+                <input name="email" type="email" placeholder="Email address" required />
               </label>
 
               <label class="field">
-                <span>Email</span>
-                <input name="email" type="email" placeholder="john@email.com" required />
-              </label>
-
-              <label class="field">
-                <span>Phone</span>
-                <input name="phone" type="tel" placeholder="(915) 000-0000" />
-              </label>
-
-              <label class="field">
-                <span>Preferred contact</span>
-                <select name="preferredContact" required>
-                  <option value="" disabled selected>Select one</option>
-                  <option>Phone</option>
-                  <option>Text</option>
-                  <option>Email</option>
-                </select>
-              </label>
-
-              <label class="field">
-                <span>Coverage goal (optional)</span>
-                <input name="coverageGoal" type="text" placeholder="$250,000" />
-              </label>
-
-              <label class="field">
-                <span>Tobacco use</span>
-                <select name="tobaccoUse" required>
-                  <option value="" disabled selected>Select one</option>
-                  <option>No</option>
-                  <option>Yes</option>
-                </select>
+                <span>Phone Number</span>
+                <input name="phone" type="tel" placeholder="Phone number" />
               </label>
             </div>
 
             <label class="field">
-              <span>Notes (optional)</span>
+              <span>Additional Notes</span>
               <textarea
                 name="notes"
-                rows="5"
-                placeholder="Anything we should know? Example: preferred time to call, budget, term vs whole questions, etc."
+                rows="6"
+                placeholder="Example: coverage goal, budget, term vs whole questions, best time to reach you, etc."
               ></textarea>
             </label>
 
             <div class="form-actions">
               <button class="btn btn-primary" type="submit">Submit</button>
-              <button class="btn btn-ghost" id="startFormBottom" type="button">Start New Form</button>
-              <p class="form-hint">We’ll only contact you about your request.</p>
+              <button class="btn btn-ghost" id="startNewFormBottom" type="button">Start New Form</button>
+            </div>
+
+            <div class="form-note">
+              By submitting, you agree we can contact you about your request.
             </div>
           </form>
 
           <aside class="side">
             <div class="side-card">
-              <h3>Quick checklist</h3>
+              <h3>To make it faster</h3>
               <ul>
-                <li>Best phone number to reach you</li>
-                <li>Preferred contact method</li>
-                <li>Coverage goal if you have one</li>
-                <li>Any questions in the notes</li>
+                <li>Put your coverage goal (example: $250,000)</li>
+                <li>Put your budget (example: $30/month)</li>
+                <li>Tell us best time to call</li>
               </ul>
             </div>
 
             <div class="side-card">
-              <h3>Want it faster?</h3>
+              <h3>Life Insurance only</h3>
               <p>
-                Add your ideal coverage and budget in the notes and we can narrow options quicker.
+                This page is focused on life insurance so the process stays simple and clear.
               </p>
-              <button class="btn btn-primary btn-full" id="startFormSide" type="button">
+              <button class="btn btn-primary btn-full" id="startNewFormSide" type="button">
                 Start New Form
               </button>
             </div>
@@ -265,25 +203,53 @@
         </div>
       </div>
     </section>
+
+    <!-- WHY -->
+    <section id="why" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why life insurance</h2>
+          <p>Protection for the people you love.</p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-title">Family support</div>
+            <div class="why-sub">Help cover bills and essentials.</div>
+          </div>
+          <div class="why-card">
+            <div class="why-title">Peace of mind</div>
+            <div class="why-sub">Know your loved ones are protected.</div>
+          </div>
+          <div class="why-card">
+            <div class="why-title">Future plans</div>
+            <div class="why-sub">Support goals like education.</div>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <button class="btn btn-primary" id="startNewFormWhy" type="button">Start New Form</button>
+          <a class="btn btn-ghost" href="#form">Go to Form</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
     <div class="container footer-inner">
-      <div class="footer-brand">
+      <div class="footer-left">
         <div class="brand-mark small">MIS</div>
         <div>
           <div class="footer-title">Mendez Insurance Solutions</div>
-          <div class="footer-sub">Life insurance support you can trust.</div>
+          <div class="footer-sub">Life Insurance</div>
         </div>
       </div>
 
-      <div class="footer-links">
-        <a href="#why">Why</a>
-        <a href="#form">Client form</a>
+      <div class="footer-right">
+        <a href="#form">Client Form</a>
         <a href="#top">Top</a>
+        <span class="copy">© <span id="year"></span></span>
       </div>
-
-      <div class="footer-copy">© <span id="year"></span> Mendez Insurance Solutions</div>
     </div>
   </footer>
 </body>
