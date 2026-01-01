@@ -28,23 +28,25 @@ if (toggle) {
   });
 }
 
-// Start new form buttons (clear + scroll)
+// Start New Form buttons: clear + scroll to form
 const form = document.getElementById("lifeForm");
-const startButtons = [
-  "startFormTop",
-  "startFormHero",
-  "startFormCard",
-  "startFormWhy",
-  "startFormBottom",
-  "startFormSide"
-].map(id => document.getElementById(id)).filter(Boolean);
+const startIds = [
+  "startNewFormTop",
+  "startNewFormHero",
+  "startNewFormCard",
+  "startNewFormBottom",
+  "startNewFormSide",
+  "startNewFormWhy"
+];
 
 function startNewForm() {
   if (successEl) successEl.classList.add("hidden");
   if (form) form.reset();
   document.body.classList.remove("menu-open");
-  const formSection = document.getElementById("form");
-  if (formSection) formSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  document.getElementById("form")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-startButtons.forEach(btn => btn.addEventListener("click", startNewForm));
+startIds.forEach((id) => {
+  const btn = document.getElementById(id);
+  if (btn) btn.addEventListener("click", startNewForm);
+});
