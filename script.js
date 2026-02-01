@@ -1,19 +1,26 @@
 // Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Success banner after Netlify redirect (?success=1)
-const params = new URLSearchParams(window.location.search);
-const success = params.get("success");
+// Get form and success message
+const form = document.getElementById("coverageForm");
 const successEl = document.getElementById("success");
 
-if (success === "1" && successEl) {
-  successEl.classList.remove("hidden");
-  window.history.replaceState({}, document.title, window.location.pathname + "#form");
+// Show success message when submitted
+if (form) {
+  form.addEventListener("submit", function () {
+    if (successEl) {
+      successEl.classList.remove("hidden");
+    }
+  });
 }
 
-// Start New Form buttons: clear + scroll
-const form = document.getElementById("coverageForm");
-const startButtons = ["startNewFormTop", "startNewFormHero", "startNewFormCard", "startNewFormBottom"]
+// Start New Form buttons
+const startButtons = [
+  "startNewFormTop",
+  "startNewFormHero",
+  "startNewFormCard",
+  "startNewFormBottom"
+]
   .map(id => document.getElementById(id))
   .filter(Boolean);
 
