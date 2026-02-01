@@ -4,15 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mendez Insurance Solutions | Coverage Form</title>
-  <meta name="description" content="Mendez Insurance Solutions — Coverage 2026 form. Fill the blanks and submit." />
+  <meta name="description" content="Mendez Insurance Solutions — Coverage 2026 form." />
 
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 
 <body>
-  <!-- Netlify detection helper -->
-  <form name="coverage-2026" netlify hidden>
+
+  <!-- NETLIFY FORM DETECTION (REQUIRED) -->
+  <form name="coverage-2026" method="POST" data-netlify="true" hidden>
+    <input type="hidden" name="form-name" value="coverage-2026" />
     <input type="text" name="name" />
     <input type="date" name="date" />
     <input type="text" name="totalInsured" />
@@ -47,7 +49,7 @@
         <div class="hero-copy">
           <h1>Coverage 2026 Form</h1>
           <p>
-            Fill in the blanks like the paper form. Submit it and Ericka can copy it and send it where it needs to go.
+            Fill in the blanks like the paper form. Submit and we’ll handle the rest.
           </p>
 
           <div class="hero-actions">
@@ -61,9 +63,9 @@
             <div class="card-title">Quick tip</div>
             <div class="card-sub">If you don’t know a field, leave it blank and submit anyway.</div>
             <div class="card-mini">
-              ✅ Matches the paper “Coverage 2026” layout<br/>
-              ✅ Big typing and clean spacing<br/>
-              ✅ Easy “Start New Form” button
+              ✅ Matches paper layout<br/>
+              ✅ Clean spacing<br/>
+              ✅ Easy reset button
             </div>
           </div>
         </div>
@@ -74,23 +76,14 @@
       <div class="container">
         <div class="section-head">
           <h2>Fill the blanks</h2>
-          <p>This is the digital version of the form you sent.</p>
+          <p>Digital version of the Coverage 2026 form.</p>
         </div>
 
-        <div id="success" class="success hidden" role="status" aria-live="polite">
-          ✅ Submitted! We’ll contact you if anything is missing.
+        <div id="success" class="success hidden">
+          ✅ Submitted successfully.
         </div>
 
         <div class="paper">
-          <div class="paper-header">
-            <div class="paper-logo">
-              <div class="paper-logo-mark">M</div>
-              <div class="paper-logo-text">
-                <div class="paper-logo-name">MENDEZ INSURANCE SOLUTIONS</div>
-              </div>
-            </div>
-            <div class="paper-title">COVERAGE 2026</div>
-          </div>
 
           <form
             class="paper-form"
@@ -102,19 +95,17 @@
           >
             <input type="hidden" name="form-name" value="coverage-2026" />
 
-            <!-- Row 1: NAME / TOTAL INSURED -->
             <div class="row-2">
               <div class="line-field">
                 <label>NAME</label>
-                <input name="name" type="text" placeholder="Full name" required />
+                <input name="name" type="text" required />
               </div>
               <div class="line-field">
                 <label>TOTAL INSURED</label>
-                <input name="totalInsured" type="text" placeholder="$" />
+                <input name="totalInsured" type="text" />
               </div>
             </div>
 
-            <!-- Row 2: DATE -->
             <div class="row-1">
               <div class="line-field">
                 <label>DATE</label>
@@ -122,19 +113,17 @@
               </div>
             </div>
 
-            <!-- Row 3: NEW PLAN -->
             <div class="row-1">
               <div class="line-field">
                 <label>NEW PLAN</label>
-                <input name="newPlan" type="text" placeholder="Plan name / type" />
+                <input name="newPlan" type="text" />
               </div>
             </div>
 
-            <!-- Row 4: PREMIUM / DENTAL -->
             <div class="row-2 premium-row">
               <div class="line-field">
                 <label>PREMIUM</label>
-                <input name="premium" type="text" placeholder="$ per month" />
+                <input name="premium" type="text" />
               </div>
 
               <div class="check-field">
@@ -147,11 +136,10 @@
               </div>
             </div>
 
-            <!-- Row 5: INCOME / EFFECTIVE DATE -->
             <div class="row-2">
               <div class="line-field">
                 <label>INCOME</label>
-                <input name="income" type="text" placeholder="$ yearly / monthly" />
+                <input name="income" type="text" />
               </div>
               <div class="line-field">
                 <label>EFFECTIVE DATE</label>
@@ -159,23 +147,17 @@
               </div>
             </div>
 
-            <!-- Row 6: PENDING -->
             <div class="row-1">
               <div class="area-field">
                 <label>PENDING</label>
-                <textarea name="pending" rows="2" placeholder="Any pending items?"></textarea>
+                <textarea name="pending" rows="2"></textarea>
               </div>
             </div>
 
-            <!-- Row 7: CHANGES/NOTES -->
             <div class="row-1">
               <div class="area-field">
                 <label>CHANGES / NOTES</label>
-                <textarea
-                  name="changesNotes"
-                  rows="7"
-                  placeholder="Write changes or notes here..."
-                ></textarea>
+                <textarea name="changesNotes" rows="7"></textarea>
               </div>
             </div>
 
@@ -188,7 +170,9 @@
               <div class="agent-name">ERICKA MENDEZ</div>
               <div class="agent-sub">HEALTH INSURANCE AGENT</div>
             </div>
+
           </form>
+
         </div>
       </div>
     </section>
@@ -200,5 +184,6 @@
       <a class="footer-link" href="#form">Back to form</a>
     </div>
   </footer>
+
 </body>
 </html>
